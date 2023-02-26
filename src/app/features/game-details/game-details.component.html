@@ -1,0 +1,7 @@
+<ng-container *ngIf="loading$ | async"> Loading... </ng-container>
+<ng-container *ngIf="game$ | async as game">
+  <h1>{{ game.name }}</h1>
+  <h3>{{ game.id }}</h3>
+  <h3>{{ game.released | date }}</h3>
+  <p>{{ game.description_raw }}</p>
+</ng-container>

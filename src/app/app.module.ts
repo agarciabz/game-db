@@ -16,9 +16,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { GameCardComponent } from './ui/game-card/game-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { GameDetailsComponent } from './features/game-details/game-details.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, GameCardComponent],
+  declarations: [
+    AppComponent,
+    GameCardComponent,
+    GameDetailsComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

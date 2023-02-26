@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-form-field class="">
+    <mat-label>Search by game title</mat-label>
+    <input
+      placeholder='E.g. "Legend of Zelda"'
+      matInput
+      type="text"
+      (keyup)="handleSearch($event)"
+    />
+  </mat-form-field>
+</mat-toolbar>
+<ng-container *ngIf="loading$ | async"> Loading... </ng-container>
+<app-game-card
+  *ngFor="let result of results$ | async"
+  [game]="result"
+  (click)="navigate(result.id)"
+></app-game-card>

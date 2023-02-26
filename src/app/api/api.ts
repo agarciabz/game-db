@@ -1,6 +1,9 @@
-import { searchResultsMock } from './mocks';
+import { gameMock } from './mocks/game';
+import { searchResultsMock } from './mocks/search';
 
 export type SearchResult = typeof searchResultsMock[number];
+
+export type GameDetail = typeof gameMock;
 
 export type RawgResponse<T> = {
   count: number;
