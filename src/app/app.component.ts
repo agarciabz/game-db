@@ -23,7 +23,7 @@ export class AppComponent {
     switchMap((term) => this.api.searchGames(platforms, term))
   );
 
-  public result$ = this.search$.pipe(
+  public results$ = this.search$.pipe(
     tap(() => this.loadingSubject.next(false)),
     map((res) => res.results)
   );

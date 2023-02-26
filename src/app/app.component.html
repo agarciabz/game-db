@@ -1,8 +1,17 @@
-<h1>Videogame database</h1>
-<input placeholder="Search here" (keyup)="handleSearch($event)" />
+<mat-toolbar color="primary">
+  <mat-form-field class="">
+    <mat-label>Search by game title</mat-label>
+    <input
+      placeholder='E.g. "Legend of Zelda"'
+      matInput
+      type="text"
+      (keyup)="handleSearch($event)"
+    />
+  </mat-form-field>
+</mat-toolbar>
+
 <ng-container *ngIf="loading$ | async"> Loading... </ng-container>
-<ul>
-  <li *ngFor="let result of result$ | async">
-    {{ result.name }}
-  </li>
-</ul>
+<app-game-card
+  *ngFor="let result of results$ | async"
+  [game]="result"
+></app-game-card>
